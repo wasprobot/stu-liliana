@@ -9,4 +9,15 @@ let conn = mysql.createConnection({
 
 conn.connect();
 
+conn.query(`CREATE TABLE Slots (
+    id MEDIUMINT NOT NULL AUTO_INCREMENT, 
+    date datetime
+    PRIMARY KEY (id))`);
+
+conn.query(`CREATE TABLE Appointments (
+    id MEDIUMINT NOT NULL AUTO_INCREMENT, 
+    slotId MEDIUMINT
+    name varchar(255)
+    PRIMARY KEY (id))`);
+
 conn.end();
